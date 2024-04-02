@@ -62,7 +62,7 @@
         $error = "Похоже вы слишком малы для использования формы, убедитесь что вы все ввели верно<br>";
         break;
     default:
-      $query = "INSERT INTO users (person_name,person_surname,number,email,year,gen,about) VALUES ('$name', '$surname','$number','$email','$date', '$gen','$about')";
+      $query = "INSERT INTO users (name,number,email,date,gen,about) VALUES ('$name','$number','$email','$date', '$gen','$about')";
 
       mysqli_query($conn, $query);
 
