@@ -19,7 +19,7 @@
   $about = mysqli_real_escape_string($conn, $_POST['about']);
 
   $lengs = $_POST['leng'];
-  $arr_len = ["Pascal","C","C++","JavaScript","PHP","Python","Java","Haskel","Clijure","Prolog","Scara"];
+  $arr_len = ["Pascal","C","C++","JavaScript","PHP","Python","Java","Haskel","Clojure","Prolog","Scara"];
   $arr_num_len = [0,0,0,0,0,0,0,0,0,0,0];
 
   foreach($lengs as $leng){
@@ -68,7 +68,7 @@
 
      $user_id = mysqli_insert_id($conn);
 
-      $query = "INSERT INTO leng (id,pascal,c,cpp,js,php,python,java,haskel,clijure,prolog,scara) VALUES ('$user_id','$e1', '$e2','$e3','$e4','$e5', '$e6','$e7','$e8','$e9','$e10','$e11')";
+      $query = "INSERT INTO leng (id,pascal,c,cpp,js,php,python,java,haskel,Clojure,prolog,scara) VALUES ('$user_id','$e1', '$e2','$e3','$e4','$e5', '$e6','$e7','$e8','$e9','$e10','$e11')";
 
       if (mysqli_query($conn, $query)) {
         echo 'Данные успешно сохранены' . "<br>";
@@ -95,7 +95,7 @@
       <?php if ($error == ""): ?>
         <div class="tables">
           <?php
-          $query = "SELECT users.person_name, users.person_surname, users.number, users.email, users.year, users.gen, users.about, leng.pascal, leng.c, leng.cpp, leng.js, leng.php, leng.python, leng.java, leng.haskel, leng.clijure, leng.prolog, leng.scara
+          $query = "SELECT users.person_name, users.person_surname, users.number, users.email, users.year, users.gen, users.about, leng.pascal, leng.c, leng.cpp, leng.js, leng.php, leng.python, leng.java, leng.haskel, leng.Clojure, leng.prolog, leng.scara
                   FROM users
                   INNER JOIN leng ON users.id = leng.id";
 
@@ -124,7 +124,7 @@
                     if($row["python"] == "1"){echo "python, ";}
                     if($row["java"] == "1"){echo "java, ";}
                     if($row["haskel"] == "1"){echo "haskel, ";}
-                    if($row["clijure"] == "1"){echo "clijure, ";}
+                    if($row["Clojure"] == "1"){echo "Clojure, ";}
                     if($row["prolog"] == "1"){echo "prolog, ";}
                     if($row["scara"] == "1"){echo "scara ," ;}
                     ?>
