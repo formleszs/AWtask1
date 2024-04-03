@@ -52,22 +52,22 @@
   
   form input{
     padding: 12px 20px;
-    background-color:#E0D5B2;
+    background-color:#AFEEEE;
     color: #87CEEB;
   
   }
   
   form textarea{
-    background-color:#E0D5B2;
+    background-color:#AFEEEE;
     color: #87CEEB;
   }
   
   form option{
-    background-color:#E0D5B2;
+    background-color:#AFEEEE;
   }
   
   form input:focus {
-    background-color: #E0D5B2;
+    background-color: #AFEEEE;
     color: #87CEEB;
   }
       order: -1;
