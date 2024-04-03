@@ -1,11 +1,11 @@
  a{
-    color: #390000;
+    color: #4682B4;
     cursor: pointer;
     text-decoration: none;
   }
   
   body{
-    background-color: #98FB98;
+    background-color: #87CEEB;
   }
   
   .text{
@@ -53,13 +53,13 @@
   form input{
     padding: 12px 20px;
     background-color:#E0D5B2;
-    color: #98FB98;
+    color: #87CEEB;
   
   }
   
   form textarea{
     background-color:#E0D5B2;
-    color: #98FB98;
+    color: #87CEEB;
   }
   
   form option{
@@ -68,7 +68,7 @@
   
   form input:focus {
     background-color: #E0D5B2;
-    color: #98FB98;
+    color: #87CEEB;
   }
       order: -1;
       margin-bottom: 10px;
