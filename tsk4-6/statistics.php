@@ -1,6 +1,6 @@
 <?php
     $lengCount=array_fill(0,11,0);
-    $conn = new mysqli("localhost", "u67427", "3193980", "u67427");
+    $conn = new mysqli("localhost", "u67295", "9463358", "u67295");
     if($conn->connect_error){
          die("Ошибка: " . $conn->connect_error);
     }
