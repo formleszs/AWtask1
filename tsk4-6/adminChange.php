@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
     
     // Подключение к базе данных
-    $db = mysqli_connect('localhost', 'u67427', '3193980', 'u67427');
+    $db = mysqli_connect('localhost', 'u67295', '9463358', 'u67295');
     if (!$db) {
         die('Error connecting to database: ' . mysqli_connect_error());
     }
