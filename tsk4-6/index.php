@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     mysqli_set_charset($db, 'utf8');
     
     //Запрос к базе данных
-    $result = $db->query("SELECT * FROM newUsers WHERE login = '$login'");
+    $result = $db->query("SELECT * FROM users WHERE login = '$login'");
     $row = $result->fetch_assoc();
     $id = $row['id'];
     $name = $row['name'];
@@ -58,13 +58,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="indexStyle.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="content">
-    <div class="image">
-        <img src="backIndex.jpg"/>
-    </div>
         <div class="loginForm">
             <h1>Войдите, чтобы менять таблицу</h1>
             <p class="error"><?php if(!empty($answer)) {echo $answer;} ?></p>

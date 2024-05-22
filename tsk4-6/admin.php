@@ -26,7 +26,7 @@
     if($conn->connect_error){
         die("Ошибка: " . $conn->connect_error);
     }
-    $sql = "SELECT * FROM newUsers";
+    $sql = "SELECT * FROM users";
     if($result = $conn->query($sql)){
         echo "<table><tr><th>Id</th><th>Имя</th><th>Телефон</th><th>Почта</th><th>Дата рождения</th><th>Пол</th><th>Биография</th><th></th><th></th></tr>";
         foreach($result as $row){

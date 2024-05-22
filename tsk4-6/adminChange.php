@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     mysqli_set_charset($db, 'utf8');
     
     //Запрос к базе данных 
-    $result = $db->query("SELECT * FROM newUsers WHERE id = '$id'");
+    $result = $db->query("SELECT * FROM users WHERE id = '$id'");
     $row = $result->fetch_assoc();
     $name = $row['name'];
     $number = $row['number'];

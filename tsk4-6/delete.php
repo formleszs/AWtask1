@@ -8,8 +8,8 @@
         }
         mysqli_set_charset($db, 'utf8');
         $id=$_POST["id"];
-        $db->query("DELETE FROM newUser_lengs WHERE user_id = '$id'");
-        $db->query("DELETE FROM newUsers WHERE id = '$id'");
+        $db->query("DELETE FROM user_lengs WHERE user_id = '$id'");
+        $db->query("DELETE FROM users WHERE id = '$id'");
         $answer="Успешно удалено";
         header("Location: admin.php");
     }

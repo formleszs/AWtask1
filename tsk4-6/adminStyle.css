@@ -1,0 +1,96 @@
+body {
+    background-color: #f0f8ff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+}
+
+h1 {
+    color: #3c4b64;
+    text-align: center;
+    margin: 0;
+}
+
+table {
+    width: 100%;
+    max-width: 800px;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid #3c4b64;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #d9eafb;
+    color: #3c4b64;
+}
+
+button.but {
+    background-color: #3c4b64;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: center;
+    margin-bottom: 20px;
+}
+
+button.but:hover {
+    background-color: #2f3640;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #3c4b64;
+    border-radius: 5px;
+    color: #3c4b64;
+    background-color: #d9eafb;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="date"]:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #1f2937;
+}
+
+input[type="submit"] {
+    background-color: #3c4b64;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: center;
+    margin-top: 20px;
+}
+
+input[type="submit"]:hover {
+    background-color: #2f3640;
+}
+
+.text {
+    color: #3c4b64;
+    text-align: center;
+    margin-top: 20px;
+}

@@ -64,20 +64,23 @@ if(!empty($_GET['answer'])){
             $date = mysqli_real_escape_string($db, $date);
             $gen = mysqli_real_escape_string($db, $gen);
             $about = mysqli_real_escape_string($db, $about);
-            $id = mysqli_real_escape_string($db, $_SESSION["id"]);
+            //$id = mysqli_real_escape_string($db, $_SESSION["id"]);
             $login = urlencode(substr(str_shuffle("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"), 0, 6));
             $pass = urlencode(substr(str_shuffle("0123456789"), 0, 5));
             
-            $db->query("INSERT INTO newUsers (name,number,mail,date,gen,about,pass,login) VALUES ('$name','$number','$email','$date', '$gen', '$about', '$pass','$login')");
-            $stmt = $db->prepare("INSERT INTO newUser_lengs(user_id, leng_id) SELECT ?, lengs.id FROM lengs WHERE lengs.leng = ?");
+            $db->query("INSERT INTO users (name,number,mail,date,gen,about,pass,login) VALUES ('$name','$number','$email','$date', '$gen', '$about', '$pass','$login')");
+            $result = $db->query("SELECT * FROM users WHERE login = '$login'");
+            $row = $result->fetch_assoc();
+            $id = $row['id'];
+
+            $stmt = $db->prepare("INSERT INTO user_lengs(user_id, leng_id) SELECT ?, lengs.id FROM lengs WHERE lengs.leng = ?");
             foreach ($lengs as $leng) {
-                $stmt->bind_param("is", $_SESSION['id'], $leng);
+                $stmt->bind_param("is",$id, $leng);
                 $stmt->execute();
             }
             $answer = "Данные отправлены!";
             $answer = urlencode($answer);
             header("Location: form.php?answer=".$answer."&login=".$login."&pass=".$pass);
-            //."&login=".$login."&pass=".$pass
         }
         
     }
@@ -130,17 +133,17 @@ if(!empty($_GET['answer'])){
                     <div class="langvich_section">
                         <h4>Выберите язык программирования</h4>
                         <select multiple name="leng[]" class="langvich" name="langvich">
-                            <option value="pasc">Pasc</option>
-                            <option value="c">C</option>
-                            <option value="c++">C++</option>
-                            <option value="js">JS</option>
+                            <option value="Pascal">Pasc</option>
+                            <option value="C">C</option>
+                            <option value="C++">C++</option>
+                            <option value="Java Script">JS</option>
                             <option value="php">PHP</option>
-                            <option value="py">Py</option>
+                            <option value="python">Py</option>
                             <option value="java">Java</option>
                             <option value="hask">Hask</option>
-                            <option value="cloj">Cloj</option>
-                            <option value="prol">Prol</option>
-                            <option value="scar">Scarse</option>
+                            <option value="clojure">Cloj</option>
+                            <option value="prolog">Prol</option>
+                            <option value="scala">Scarse</option>
                         </select>
                     </div>
                     <div class="textarea">

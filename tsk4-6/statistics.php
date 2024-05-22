@@ -4,12 +4,26 @@
     if($conn->connect_error){
          die("Ошибка: " . $conn->connect_error);
     }
-    $sql = "SELECT * FROM newUser_lengs";
-    if($result = $conn->query($sql)){
-        foreach($result as $row){
-            $lengCount[$row["leng_id"]]+=1;
-        }
-   }
+    $countLeng = [];
+    for($i = 1; $i <= 11; $i++){
+        $result = $conn->query("SELECT count(*) as leng FROM user_lengs WHERE leng_id = '$i'");
+        $row = $result->fetch_assoc();
+        $countLeng[$i-1] =  $row['leng'];
+    }
+
+    $lengs = array(
+        "Pascal" => $countLeng[0],
+        "C" => $countLeng[1],
+        "C++" => $countLeng[2],
+        "JavaScript" => $countLeng[3],
+        "Php" => $countLeng[4],
+        "Python" => $countLeng[5],
+        "Java" => $countLeng[6],
+        "Haskel" => $countLeng[7],
+        "Clojure" => $countLeng[8],
+        "Prolog" => $countLeng[9],
+        "Scarse" => $countLeng[10],
+    );
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,20 +35,16 @@
 </head>
 <body>
     <div class="len">
-        <p class="text">Pascal: <?php echo $lengCount[0]; ?></p>
-        <p class="text">C: <?php echo $lengCount[1]; ?></p>
-        <p class="text">C++: <?php echo $lengCount[2]; ?></p>
-        <p class="text">Java Script: <?php echo $lengCount[3]; ?></p>
-        <p class="text">PHP: <?php echo $lengCount[4]; ?></p>
-        <p class="text">Python: <?php echo $lengCount[5]; ?></p>
-        <p class="text">Java: <?php echo $lengCount[6]; ?></p>
-        <p class="text">Hask: <?php echo $lengCount[7]; ?></p>
-        <p class="text">Clojure: <?php echo $lengCount[8]; ?></p>
-        <p class="text">Prolog: <?php echo $lengCount[9]; ?></p>
-        <p class="text">Scala: <?php echo $lengCount[10]; ?></p>
-    </div>
-    <div class="clouds">
-        <img src="cloud.jpg">
-        <img src="cloudT.jpg">
+        <p class="text">Pascal: <?php echo $lengs['Pascal']?></p>
+        <p class="text">C: <?php echo $lengs['C']?></p>
+        <p class="text">C++: <?php echo $lengs['C++']?></p>
+        <p class="text">Java Script: <?php echo $lengs['JavaScript']?></p>
+        <p class="text">PHP: <?php echo $lengs['Php']?></p>
+        <p class="text">Python: <?php echo $lengs['Python']?></p>
+        <p class="text">Java: <?php echo $lengs['Java']?></p>
+        <p class="text">Hask: <?php echo $lengs['Haskel']?></p>
+        <p class="text">Clojure: <?php echo $lengs['Clojure']?></p>
+        <p class="text">Prolog: <?php echo $lengs['Prolog']?></p>
+        <p class="text">Scala: <?php echo $lengs['Scarse']?></p>
     </div>
 </body>

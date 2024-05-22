@@ -70,9 +70,9 @@
             $id = mysqli_real_escape_string($db, $_SESSION["id"]);
             
             
-            $db->query("UPDATE newUsers SET name='$name', number='$number', mail='$email',date='$date', gen='$gen', about='$about' WHERE id = '$id'");
-            $db->query("DELETE FROM newUser_lengs where user_id = '$id'");
-            $stmt = $db->prepare("INSERT INTO newUser_lengs(user_id, leng_id) SELECT ?, lengs.id FROM lengs WHERE lengs.leng = ?");
+            $db->query("UPDATE users SET name='$name', number='$number', mail='$email',date='$date', gen='$gen', about='$about' WHERE id = '$id'");
+            $db->query("DELETE FROM user_lengs where user_id = '$id'");
+            $stmt = $db->prepare("INSERT INTO user_lengs(user_id, leng_id) SELECT ?, lengs.id FROM lengs WHERE lengs.leng = ?");
             foreach ($lengs as $leng) {
                 $stmt->bind_param("is", $_SESSION['id'], $leng);
                 $stmt->execute();
@@ -124,17 +124,17 @@
                     <div class="langvich_section">
                         <h4>Выберите язык программирования</h4>
                         <select multiple name="leng[]" class="langvich" name="langvich">
-                            <option value="pasc">Pasc</option>
-                            <option value="c">C</option>
-                            <option value="c++">C++</option>
-                            <option value="js">JS</option>
-                            <option value="php">PHP</option>
-                            <option value="py">Py</option>
-                            <option value="java">Java</option>
-                            <option value="hask">Hask</option>
-                            <option value="cloj">Cloj</option>
-                            <option value="prol">Prol</option>
-                            <option value="scar">Scarse</option>
+                            <option value="Pascal">Pascal</option>
+                            <option value="C">C</option>
+                            <option value="C++">C++</option>
+                            <option value="Java Script">Java Script</option>
+                            <option value="PHP">PHP</option>
+                            <option value="Python">Python</option>
+                            <option value="Java">Java</option>
+                            <option value="Hask">Hask</option>
+                            <option value="Clojure">Clojure</option>
+                            <option value="Prolog">Prolog</option>
+                            <option value="Scala">Scala</option>
                         </select>
                     </div>
                     <div class="textarea">

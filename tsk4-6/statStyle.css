@@ -1,0 +1,37 @@
+body {
+    background-color: #f0f8ff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+}
+
+.len {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.text {
+    color: #3c4b64;
+    text-align: center;
+    margin: 0;
+    width: 100%;
+    font-size: 24px;
+    margin: 20px 0px;
+}
+
+.clouds {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+}
+
